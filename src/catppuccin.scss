@@ -1,0 +1,126 @@
+@use "sass:map";
+@use "@catppuccin/palette/scss/catppuccin" as catppuccin;
+@use "@catppuccin/highlightjs/sass/_theme" as hljs;
+
+$colors: map.get(catppuccin.$palette, $flavor);
+
+/*!
+ * Soothing pastel theme for Marp / Marpit.
+ *
+ * @theme catppuccin-#{$flavor}
+ * @author Nicolas Goudry
+ *
+ * @auto-scaling true
+ * @size 16:9 1280px 720px
+ * @size 4:3 960px 720px
+ */
+
+@import-theme "default";
+@include hljs.highlights($flavor);
+
+:root {
+  /* github-markdown-css variables */
+  --bgColor-attention-muted: #{rgba(map.get($colors, "peach"), 0.15)};
+  --bgColor-default: #{map.get($colors, "base")};
+  --bgColor-muted: #{map.get($colors, "surface0")};
+  --bgColor-neutral-muted: #{map.get($colors, "overlay0")};
+  --borderColor-accent-emphasis: #{map.get($colors, "red")};
+  --borderColor-attention-emphasis: #{map.get($colors, "peach")};
+  --borderColor-danger-emphasis: #{map.get($colors, "red")};
+  --borderColor-default: #{map.get($colors, "surface0")};
+  --borderColor-done-emphasis: #{map.get($colors, "mauve")};
+  --borderColor-muted: #{map.get($colors, "surface0")};
+  --borderColor-success-emphasis: #{map.get($colors, "green")};
+  --fgColor-accent: #{map.get($colors, "red")};
+  --fgColor-attention: #{map.get($colors, "yellow")};
+  --fgColor-danger: #{map.get($colors, "red")};
+  --fgColor-default: #{map.get($colors, "text")};
+  --fgColor-done: #{map.get($colors, "mauve")};
+  --fgColor-muted: #{map.get($colors, "subtext1")};
+  --fgColor-success: #{map.get($colors, "green")};
+  /* Marp default theme variables */
+  --h1-color: #{map.get($colors, "red")};
+  --header-footer-color: #{map.get($colors, "surface1")};
+  --heading-strong-color: #{map.get($colors, "red")};
+  --paginate-color: #{map.get($colors, "overlay0")};
+}
+
+section {
+  h1 { color: #{map.get($colors, "red")}; }
+  h2 { color: #{map.get($colors, "peach")}; }
+  h3 { color: #{map.get($colors, "yellow")}; }
+  h4 { color: #{map.get($colors, "green")}; }
+  h5 { color: #{map.get($colors, "sapphire")}; }
+  h6 { color: #{map.get($colors, "lavender")}; }
+  a { color: #{map.get($colors, "blue")}; }
+
+  table {
+    thead th {
+      background: var(--bgColor-muted);
+      color: var(--fgColor-muted);
+    }
+
+    tbody > tr:nth-child(2n) {
+      td,
+      th {
+        background: var(--bgColor-default);
+        color: var(--fgColor-default);
+      }
+    }
+  }
+
+  .markdown-alert.markdown-alert-note {
+    border-left-color: #{map.get($colors, "blue")};
+  }
+
+  .markdown-alert.markdown-alert-note .markdown-alert-title {
+    color: #{map.get($colors, "blue")};
+  }
+
+  /* Lead class taken from Marp builtin Gaia theme */
+  &:where(.lead) {
+    place-content: safe center center;
+
+    /* Definitions for classic behavior: Users can adopt flex centering by tweaking style `section.lead { display: flex }` */
+    flex-flow: column nowrap;
+    align-items: stretch;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      text-align: center;
+    }
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    p {
+      text-align: center;
+    }
+
+    blockquote {
+      > h1,
+      > h2,
+      > h3,
+      > h4,
+      > h5,
+      > h6,
+      > p {
+        text-align: left;
+      }
+    }
+
+    ul,
+    ol {
+      > li > p {
+        text-align: left;
+      }
+    }
+
+    table {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

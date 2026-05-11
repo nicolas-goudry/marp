@@ -1,0 +1,302 @@
+/* https://highlightjs.readthedocs.io/en/latest/css-classes-reference.html */
+/*!
+ * Soothing pastel theme for Marp / Marpit.
+ *
+ * @theme catppuccin-frappe
+ * @author Nicolas Goudry
+ *
+ * @auto-scaling true
+ * @size 16:9 1280px 720px
+ * @size 4:3 960px 720px
+ */
+@import-theme "default";
+&.hljs {
+  color: #c6d0f5;
+  background: #303446;
+}
+
+.hljs-keyword {
+  color: #ca9ee6;
+}
+
+.hljs-built_in {
+  color: #e78284;
+}
+
+.hljs-type {
+  color: #e5c890;
+}
+
+.hljs-literal {
+  color: #ef9f76;
+}
+
+.hljs-number {
+  color: #ef9f76;
+}
+
+.hljs-operator {
+  color: #99d1db;
+}
+
+.hljs-punctuation {
+  color: #b5bfe2;
+}
+
+.hljs-property {
+  color: #81c8be;
+}
+
+.hljs-regexp {
+  color: #f4b8e4;
+}
+
+.hljs-string {
+  color: #a6d189;
+}
+
+.hljs-char.escape_ {
+  color: #a6d189;
+}
+
+.hljs-subst {
+  color: #a5adce;
+}
+
+.hljs-symbol {
+  color: #eebebe;
+}
+
+.hljs-variable {
+  color: #ca9ee6;
+}
+
+.hljs-variable.language_ {
+  color: #ca9ee6;
+}
+
+.hljs-variable.constant_ {
+  color: #ef9f76;
+}
+
+.hljs-title {
+  color: #8caaee;
+}
+
+.hljs-title.class_ {
+  color: #e5c890;
+}
+
+.hljs-title.function_ {
+  color: #8caaee;
+}
+
+.hljs-params {
+  color: #c6d0f5;
+}
+
+.hljs-comment {
+  color: #949cbb;
+}
+
+.hljs-doctag {
+  color: #e78284;
+}
+
+.hljs-meta {
+  color: #ef9f76;
+}
+
+.hljs-section {
+  color: #8caaee;
+}
+
+.hljs-tag {
+  color: #81c8be;
+}
+
+.hljs-name {
+  color: #ca9ee6;
+}
+
+.hljs-attr {
+  color: #8caaee;
+}
+
+.hljs-attribute {
+  color: #a6d189;
+}
+
+.hljs-bullet {
+  color: #81c8be;
+}
+
+.hljs-code {
+  color: #a6d189;
+}
+
+.hljs-emphasis {
+  color: #e78284;
+  font-style: italic;
+}
+
+.hljs-strong {
+  color: #e78284;
+  font-weight: bold;
+}
+
+.hljs-formula {
+  color: #81c8be;
+}
+
+.hljs-link {
+  color: #85c1dc;
+  font-style: italic;
+}
+
+.hljs-quote {
+  color: #a6d189;
+  font-style: italic;
+}
+
+.hljs-selector-tag {
+  color: #e5c890;
+}
+
+.hljs-selector-id {
+  color: #8caaee;
+}
+
+.hljs-selector-class {
+  color: #81c8be;
+}
+
+.hljs-selector-attr {
+  color: #ca9ee6;
+}
+
+.hljs-selector-pseudo {
+  color: #81c8be;
+}
+
+.hljs-template-tag {
+  color: #eebebe;
+}
+
+.hljs-template-variable {
+  color: #eebebe;
+}
+
+.hljs-addition {
+  color: #a6d189;
+  background: rgba(166, 209, 137, 0.15);
+}
+
+.hljs-deletion {
+  color: #e78284;
+  background: rgba(231, 130, 132, 0.15);
+}
+
+:root {
+  /* github-markdown-css variables */
+  --bgColor-attention-muted: rgba(239, 159, 118, 0.15);
+  --bgColor-default: #303446;
+  --bgColor-muted: #414559;
+  --bgColor-neutral-muted: #737994;
+  --borderColor-accent-emphasis: #e78284;
+  --borderColor-attention-emphasis: #ef9f76;
+  --borderColor-danger-emphasis: #e78284;
+  --borderColor-default: #414559;
+  --borderColor-done-emphasis: #ca9ee6;
+  --borderColor-muted: #414559;
+  --borderColor-success-emphasis: #a6d189;
+  --fgColor-accent: #e78284;
+  --fgColor-attention: #e5c890;
+  --fgColor-danger: #e78284;
+  --fgColor-default: #c6d0f5;
+  --fgColor-done: #ca9ee6;
+  --fgColor-muted: #b5bfe2;
+  --fgColor-success: #a6d189;
+  /* Marp default theme variables */
+  --h1-color: #e78284;
+  --header-footer-color: #51576d;
+  --heading-strong-color: #e78284;
+  --paginate-color: #737994;
+}
+
+section h1 {
+  color: #e78284;
+}
+section h2 {
+  color: #ef9f76;
+}
+section h3 {
+  color: #e5c890;
+}
+section h4 {
+  color: #a6d189;
+}
+section h5 {
+  color: #85c1dc;
+}
+section h6 {
+  color: #babbf1;
+}
+section a {
+  color: #8caaee;
+}
+section table thead th {
+  background: var(--bgColor-muted);
+  color: var(--fgColor-muted);
+}
+section table tbody > tr:nth-child(2n) td,
+section table tbody > tr:nth-child(2n) th {
+  background: var(--bgColor-default);
+  color: var(--fgColor-default);
+}
+section .markdown-alert.markdown-alert-note {
+  border-left-color: #8caaee;
+}
+section .markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: #8caaee;
+}
+section {
+  /* Lead class taken from Marp builtin Gaia theme */
+}
+section:where(.lead) {
+  place-content: safe center center;
+  /* Definitions for classic behavior: Users can adopt flex centering by tweaking style `section.lead { display: flex }` */
+  flex-flow: column nowrap;
+  align-items: stretch;
+}
+section:where(.lead) h1,
+section:where(.lead) h2,
+section:where(.lead) h3,
+section:where(.lead) h4,
+section:where(.lead) h5,
+section:where(.lead) h6 {
+  text-align: center;
+}
+section:where(.lead) {
+  /* stylelint-disable-next-line no-descending-specificity */
+}
+section:where(.lead) p {
+  text-align: center;
+}
+section:where(.lead) blockquote > h1,
+section:where(.lead) blockquote > h2,
+section:where(.lead) blockquote > h3,
+section:where(.lead) blockquote > h4,
+section:where(.lead) blockquote > h5,
+section:where(.lead) blockquote > h6,
+section:where(.lead) blockquote > p {
+  text-align: left;
+}
+section:where(.lead) ul > li > p,
+section:where(.lead) ol > li > p {
+  text-align: left;
+}
+section:where(.lead) table {
+  margin-left: auto;
+  margin-right: auto;
+}
