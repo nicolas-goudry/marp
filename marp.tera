@@ -6,7 +6,6 @@ whiskers:
   filename: "themes/catppuccin-{{ flavor.identifier }}.css"
   hex_format: "#{{r}}{{g}}{{b}}{{z}}"
 ---
-/* https://highlightjs.readthedocs.io/en/latest/css-classes-reference.html */
 /*!
  * Soothing pastel theme for Marp / Marpit.
  *
@@ -17,190 +16,122 @@ whiskers:
  * @size 16:9 1280px 720px
  * @size 4:3 960px 720px
  */
-@import-theme "default";
-&.hljs {
+
+@import "default";
+
+/* Highlight.js */
+
+pre :where(.hljs) {
   color: {{ text.hex }};
   background: {{ base.hex }};
 }
 
-.hljs-keyword {
+pre :where(.hljs-keyword),
+pre :where(.hljs-variable),
+pre :where(.hljs-variable.language_),
+pre :where(.hljs-name),
+pre :where(.hljs-selector-attr) {
   color: {{ mauve.hex }};
 }
 
-.hljs-built_in {
+pre :where(.hljs-built_in),
+pre :where(.hljs-doctag) {
   color: {{ red.hex }};
 }
 
-.hljs-type {
+pre :where(.hljs-type),
+pre :where(.hljs-title.class_),
+pre :where(.hljs-selector-tag) {
   color: {{ yellow.hex }};
 }
 
-.hljs-literal {
+pre :where(.hljs-literal),
+pre :where(.hljs-number),
+pre :where(.hljs-variable.constant_),
+pre :where(.hljs-meta) {
   color: {{ peach.hex }};
 }
 
-.hljs-number {
-  color: {{ peach.hex }};
-}
-
-.hljs-operator {
+pre :where(.hljs-operator) {
   color: {{ sky.hex }};
 }
 
-.hljs-punctuation {
+pre :where(.hljs-punctuation) {
   color: {{ subtext1.hex }};
 }
 
-.hljs-property {
+pre :where(.hljs-property),
+pre :where(.hljs-tag),
+pre :where(.hljs-bullet),
+pre :where(.hljs-formula),
+pre :where(.hljs-selector-class),
+pre :where(.hljs-selector-pseudo) {
   color: {{ teal.hex }};
 }
 
-.hljs-regexp {
+pre :where(.hljs-regexp) {
   color: {{ pink.hex }};
 }
 
-.hljs-string {
+pre :where(.hljs-string),
+pre :where(.hljs-char.escape_),
+pre :where(.hljs-attribute),
+pre :where(.hljs-code) {
   color: {{ green.hex }};
 }
 
-.hljs-char.escape_ {
-  color: {{ green.hex }};
-}
-
-.hljs-subst {
+pre :where(.hljs-subst) {
   color: {{ subtext0.hex }};
 }
 
-.hljs-symbol {
+pre :where(.hljs-symbol),
+pre :where(.hljs-template-tag),
+pre :where(.hljs-template-variable) {
   color: {{ flamingo.hex }};
 }
 
-.hljs-variable {
-  color: {{ mauve.hex }};
-}
-
-.hljs-variable.language_ {
-  color: {{ mauve.hex }};
-}
-
-.hljs-variable.constant_ {
-  color: {{ peach.hex }};
-}
-
-.hljs-title {
+pre :where(.hljs-title),
+pre :where(.hljs-title.function_),
+pre :where(.hljs-section),
+pre :where(.hljs-attr),
+pre :where(.hljs-selector-id) {
   color: {{ blue.hex }};
 }
 
-.hljs-title.class_ {
-  color: {{ yellow.hex }};
-}
-
-.hljs-title.function_ {
-  color: {{ blue.hex }};
-}
-
-.hljs-params {
+pre :where(.hljs-params) {
   color: {{ text.hex }};
 }
 
-.hljs-comment {
+pre :where(.hljs-comment) {
   color: {{ overlay2.hex }};
 }
 
-.hljs-doctag {
-  color: {{ red.hex }};
-}
-
-.hljs-meta {
-  color: {{ peach.hex }};
-}
-
-.hljs-section {
-  color: {{ blue.hex }};
-}
-
-.hljs-tag {
-  color: {{ teal.hex }};
-}
-
-.hljs-name {
-  color: {{ mauve.hex }};
-}
-
-.hljs-attr {
-  color: {{ blue.hex }};
-}
-
-.hljs-attribute {
-  color: {{ green.hex }};
-}
-
-.hljs-bullet {
-  color: {{ teal.hex }};
-}
-
-.hljs-code {
-  color: {{ green.hex }};
-}
-
-.hljs-emphasis {
+pre :where(.hljs-emphasis) {
   color: {{ red.hex }};
   font-style: italic;
 }
 
-.hljs-strong {
+pre :where(.hljs-strong) {
   color: {{ red.hex }};
   font-weight: bold;
 }
 
-.hljs-formula {
-  color: {{ teal.hex }};
-}
-
-.hljs-link {
+pre :where(.hljs-link) {
   color: {{ sapphire.hex }};
   font-style: italic;
 }
 
-.hljs-quote {
+pre :where(.hljs-quote) {
   color: {{ green.hex }};
   font-style: italic;
 }
 
-.hljs-selector-tag {
-  color: {{ yellow.hex }};
-}
-
-.hljs-selector-id {
-  color: {{ blue.hex }};
-}
-
-.hljs-selector-class {
-  color: {{ teal.hex }};
-}
-
-.hljs-selector-attr {
-  color: {{ mauve.hex }};
-}
-
-.hljs-selector-pseudo {
-  color: {{ teal.hex }};
-}
-
-.hljs-template-tag {
-  color: {{ flamingo.hex }};
-}
-
-.hljs-template-variable {
-  color: {{ flamingo.hex }};
-}
-
-.hljs-addition {
+pre :where(.hljs-addition) {
   color: {{ green.hex }};
   background: {{ green | mod(opacity=0.15) | css_rgba }};
 }
 
-.hljs-deletion {
+pre :where(.hljs-deletion) {
   color: {{ red.hex }};
   background: {{ red | mod(opacity=0.15) | css_rgba }};
 }
