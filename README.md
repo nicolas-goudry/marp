@@ -136,11 +136,11 @@ Now, typing `theme: catppuccin-mocha` in your markdown file will instantly apply
 
 ## Development
 
-This project uses Sass and Node to dynamically generate the 4 Catppuccin flavors. To build the CSS locally:
+This project uses [Whiskers](https://whiskers.catppuccin.com) to dynamically generate the 4 Catppuccin flavors. To build locally:
 
 1. Clone the repository: `git clone https://github.com/nicolas-goudry/marp.git`
-2. Install dependencies: `npm install`
-3. Run the build script: `npm run build` (or `node build.js`)
+2. [Install Whiskers](https://whiskers.catppuccin.com/getting-started/installation/)
+3. Build the themes: `whiskers marp.tera`
 4. The generated `.css` files will be placed in the `themes/` directory.
 
 ## 💝 Thanks to
