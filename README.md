@@ -6,9 +6,9 @@
 </h3>
 
 <p align="center">
-	<a href="https://github.com/nicolas-goudry/marp/stargazers"><img src="https://img.shields.io/github/stars/nicolas-goudry/catppuccin-marp?colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
-	<a href="https://github.com/nicolas-goudry/marp/issues"><img src="https://img.shields.io/github/issues/nicolas-goudry/catppuccin-marp?colorA=363a4f&colorB=f5a97f&style=for-the-badge"></a>
-	<a href="https://github.com/nicolas-goudry/marp/contributors"><img src="https://img.shields.io/github/contributors/nicolas-goudry/catppuccin-marp?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
+	<a href="https://github.com/nicolas-goudry/marp/stargazers"><img src="https://img.shields.io/github/stars/nicolas-goudry/marp?colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
+	<a href="https://github.com/nicolas-goudry/marp/issues"><img src="https://img.shields.io/github/issues/nicolas-goudry/marp?colorA=363a4f&colorB=f5a97f&style=for-the-badge"></a>
+	<a href="https://github.com/nicolas-goudry/marp/contributors"><img src="https://img.shields.io/github/contributors/nicolas-goudry/marp?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
 </p>
 
 <p align="center">
