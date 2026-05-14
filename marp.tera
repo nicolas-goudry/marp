@@ -137,77 +137,96 @@ pre :where(.hljs-deletion) {
 }
 
 :root {
+  /* Color palette CSS variables */
+  {%- for key, color in flavor.colors %}
+  --{{key}}: {{color.hex}};
+  {%- for opacity in [10,20,30,40,50,60,70,80,90] %}
+  --{{key}}-{{opacity}}: {{ color | mod(opacity=opacity / 100.0) | css_rgba }};
+  {%- endfor %}
+  {%- endfor %}
+
   /* github-markdown-css variables */
   --bgColor-attention-muted: {{ peach | mod(opacity=0.15) | css_rgba }};
-  --bgColor-default: {{ base.hex }};
-  --bgColor-muted: {{ surface0.hex }};
-  --bgColor-neutral-muted: {{ overlay0.hex }};
-  --borderColor-accent-emphasis: {{ red.hex }};
-  --borderColor-attention-emphasis: {{ peach.hex }};
-  --borderColor-danger-emphasis: {{ red.hex }};
-  --borderColor-default: {{ surface0.hex }};
-  --borderColor-done-emphasis: {{ mauve.hex }};
-  --borderColor-muted: {{ surface0.hex }};
-  --borderColor-success-emphasis: {{ green.hex }};
-  --fgColor-accent: {{ red.hex }};
-  --fgColor-attention: {{ yellow.hex }};
-  --fgColor-danger: {{ red.hex }};
-  --fgColor-default: {{ text.hex }};
-  --fgColor-done: {{ mauve.hex }};
-  --fgColor-muted: {{ subtext1.hex }};
-  --fgColor-success: {{ green.hex }};
+  --bgColor-default: var(--{{ base.identifier }});
+  --bgColor-muted: var(--{{ surface0.identifier }});
+  --bgColor-neutral-muted: var(--{{ overlay0.identifier }});
+  --borderColor-accent-emphasis: var(--{{ red.identifier }});
+  --borderColor-attention-emphasis: var(--{{ peach.identifier }});
+  --borderColor-danger-emphasis: var(--{{ red.identifier }});
+  --borderColor-default: var(--{{ surface0.identifier }});
+  --borderColor-done-emphasis: var(--{{ mauve.identifier }});
+  --borderColor-muted: var(--{{ surface0.identifier }});
+  --borderColor-success-emphasis: var(--{{ green.identifier }});
+  --fgColor-accent: var(--{{ red.identifier }});
+  --fgColor-attention: var(--{{ yellow.identifier }});
+  --fgColor-danger: var(--{{ red.identifier }});
+  --fgColor-default: var(--{{ text.identifier }});
+  --fgColor-done: var(--{{ mauve.identifier }});
+  --fgColor-muted: var(--{{ subtext1.identifier }});
+  --fgColor-success: var(--{{ green.identifier }});
+
   /* Marp default theme variables */
-  --h1-color: {{ red.hex }};
-  --header-footer-color: {{ surface1.hex }};
-  --heading-strong-color: {{ red.hex }};
-  --paginate-color: {{ overlay0.hex }};
+  --h1-color: var(--{{ red.identifier }});
+  --header-footer-color: var(--{{ surface1.identifier }});
+  --heading-strong-color: var(--{{ red.identifier }});
+  --paginate-color: var(--{{ overlay0.identifier }});
 }
 
 section h1 {
-  color: {{ red.hex }};
+  color: var(--{{ red.identifier }});
 }
+
 section h2 {
-  color: {{ peach.hex }};
+  color: var(--{{ peach.identifier }});
 }
+
 section h3 {
-  color: {{ yellow.hex }};
+  color: var(--{{ yellow.identifier }});
 }
+
 section h4 {
-  color: {{ green.hex }};
+  color: var(--{{ green.identifier }});
 }
+
 section h5 {
-  color: {{ sapphire.hex }};
+  color: var(--{{ sapphire.identifier }});
 }
+
 section h6 {
-  color: {{ lavender.hex }};
+  color: var(--{{ lavender.identifier }});
 }
+
 section a {
-  color: {{ blue.hex }};
+  color: var(--{{ blue.identifier }});
 }
+
 section table thead th {
   background: var(--bgColor-muted);
   color: var(--fgColor-muted);
 }
+
 section table tbody > tr:nth-child(2n) td,
 section table tbody > tr:nth-child(2n) th {
   background: var(--bgColor-default);
   color: var(--fgColor-default);
 }
+
 section .markdown-alert.markdown-alert-note {
-  border-left-color: {{ blue.hex }};
+  border-left-color: var(--{{ blue.identifier }});
 }
+
 section .markdown-alert.markdown-alert-note .markdown-alert-title {
-  color: {{ blue.hex }};
+  color: var(--{{ blue.identifier }});
 }
-section {
-  /* Lead class taken from Marp builtin Gaia theme */
-}
+
+/* Lead class taken from Marp builtin Gaia theme */
 section:where(.lead) {
   place-content: safe center center;
   /* Definitions for classic behavior: Users can adopt flex centering by tweaking style `section.lead { display: flex }` */
   flex-flow: column nowrap;
   align-items: stretch;
 }
+
 section:where(.lead) h1,
 section:where(.lead) h2,
 section:where(.lead) h3,
@@ -216,12 +235,11 @@ section:where(.lead) h5,
 section:where(.lead) h6 {
   text-align: center;
 }
-section:where(.lead) {
-  /* stylelint-disable-next-line no-descending-specificity */
-}
+
 section:where(.lead) p {
   text-align: center;
 }
+
 section:where(.lead) blockquote > h1,
 section:where(.lead) blockquote > h2,
 section:where(.lead) blockquote > h3,
@@ -231,10 +249,12 @@ section:where(.lead) blockquote > h6,
 section:where(.lead) blockquote > p {
   text-align: left;
 }
+
 section:where(.lead) ul > li > p,
 section:where(.lead) ol > li > p {
   text-align: left;
 }
+
 section:where(.lead) table {
   margin-left: auto;
   margin-right: auto;
