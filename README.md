@@ -134,6 +134,38 @@ If you use the [Marp for VS Code Extension](https://marketplace.visualstudio.com
 
 Now, typing `theme: catppuccin-mocha` in your markdown file will instantly apply the theme in the VS Code preview panel!
 
+### Theme features
+
+#### CSS variables
+
+Each flavor exports its palette through CSS variables, with the addition of opacity-based variables for each color, from 10 to 90%:
+
+```css
+--red: #f38ba8;
+--red-10: rgba(243, 139, 168, 0.10);
+/* ... */
+--red-90: rgba(243, 139, 168, 0.90);
+```
+
+#### `lead` class
+
+Similarly to Marp's builtin Gaia theme, this theme provides the `lead` CSS class, which centers the contents of the slide when applied. It is useful for the leading page like a title slide.
+
+```md
+<!--
+theme: catppuccin-mocha
+class: lead
+-->
+```
+
+> [!TIP]
+>
+> Marpit's [scoped local directive](https://marpit.marp.app/directives?id=apply-to-a-single-page-spot-directives) would be useful to apply lead class only into a current page.
+>
+> ```md
+> <!-- _class: lead -->
+> ```
+
 ## Development
 
 This project uses [Whiskers](https://whiskers.catppuccin.com) to dynamically generate the 4 Catppuccin flavors. To build locally:
